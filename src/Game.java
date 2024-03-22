@@ -6,7 +6,7 @@ public class Game {
         handleInvalidPlays(symbol, x, y);
 
         _lastSymbol = symbol;
-        _board.AddTileAt(symbol, x, y);
+        _board.AddSymbolAt(symbol, x, y);
     }
 
     private void handleInvalidPlays(char symbol, int x, int y) throws Exception {

@@ -11,10 +11,7 @@ public class Board
         {
             for (int j = 0; j < 3; j++)
             {
-                Tile tile = new Tile();
-                tile.X = i;
-                tile.Y = j;
-                tile.Symbol = ' ';
+                Tile tile = new Tile(i, j);
                 _plays.add(tile);
             }
         }
@@ -30,13 +27,10 @@ public class Board
         return null;
     }
 
-    public void AddTileAt(char symbol, int x, int y)
+    public void AddSymbolAt(char symbol, int x, int y)
     {
-        Tile newTile = new Tile();
-        newTile.X = x;
-        newTile.Y = y;
-        newTile.Symbol = symbol;
+        Tile tileToPaint = TileAt(x,y);
 
-        TileAt(x,y).Symbol = symbol;
+        tileToPaint.paintWithNewSymbol(symbol);
     }
 }
